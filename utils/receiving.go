@@ -25,6 +25,6 @@ func twoArr() {
 func oneArr() {
 	var F = make([]int, 3)
 	for i := 0; i < 3; i++ {
-		fmt.Scan(F[i])
+		fmt.Scan(&F[i])
 	}
 }
