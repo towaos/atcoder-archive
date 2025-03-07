@@ -22,3 +22,13 @@ func Sum(arr []int) int {
 	return total
 
 }
+
+func ArrMin(arr []int) int {
+	minVal := arr[0]
+	for _, v := range arr {
+		if v < minVal {
+			minVal = v
+		}
+	}
+	return minVal
+}
