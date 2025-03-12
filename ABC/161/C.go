@@ -41,31 +41,24 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	var N, K int
-	fmt.Scan(&N, &K)
-
-	n := N % K
-
-	if K == 1 {
-		fmt.Println(0)
-		return
-	}
-
-	if n < abs(n, K) {
-		fmt.Println(n)
-	} else {
-		fmt.Println(abs(n, K))
-	}
-
+func minN(N, K int64) int64 {
+	rem := N % K
+	return min(rem, K-rem)
 }
 
-func abs(a, b int) int {
+func min(a, b int64) int64 {
 	if a < b {
-		return b - a
-	} else {
-		return a - b
+		return a
 	}
+	return b
+}
+
+func main() {
+	var N, K int64
+	fmt.Scan(&N, &K)
+	fmt.Println(minN(N, K))
 }
